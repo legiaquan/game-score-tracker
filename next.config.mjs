@@ -22,6 +22,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/game-score-tracker' : '',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
