@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve out",
     "lint": "next lint",
-    "deploy": "NODE_ENV=production next build && cp -r public/* out/ && touch out/.nojekyll && pnpm dlx gh-pages -d out",
+    "build:github": "NODE_ENV=production next build && cp -r public/* out/ && touch out/.nojekyll",
+    "deploy": "npm run build:github && pnpm dlx gh-pages -d out",
     "preview": "npx serve out"
   },
   "dependencies": {

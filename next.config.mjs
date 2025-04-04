@@ -23,8 +23,8 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/game-score-tracker' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/game-score-tracker' : '',
+  basePath: '',
+  assetPrefix: '',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
