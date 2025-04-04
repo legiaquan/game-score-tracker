@@ -4,20 +4,22 @@
   <meta charset="utf-8">
   <title>Page Not Found</title>
   <script>
-    // Single-page app routing for GitHub Pages
+    // GitHub Pages Single Page App routing fix
     // https://github.com/rafgraph/spa-github-pages
-    var pathSegmentsToKeep = 1;
+    var segmentCount = 1; // For GitHub Pages hosted in user repos
     var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+    
+    // Redirect to the correct URL with basePath included
+    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      '/game-score-tracker' + '/' +  // Use exact repo name here
+      l.pathname.split('/').slice(segmentCount + 1).join('/') +
+      (l.search ? l.search : '');
+    
+    window.location.href = redirectUrl;
   </script>
 </head>
 <body>
-  <p>Redirecting...</p>
+  <h1>Page Not Found</h1>
+  <p>Redirecting to homepage...</p>
 </body>
 </html> 

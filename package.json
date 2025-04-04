@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && pnpm dlx gh-pages -d out"
+    "deploy": "NODE_ENV=production next build && cp -r public/* out/ && touch out/.nojekyll && pnpm dlx gh-pages -d out",
+    "preview": "npx serve out"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

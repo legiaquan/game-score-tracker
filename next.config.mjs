@@ -24,6 +24,7 @@ const nextConfig = {
   },
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? '/game-score-tracker' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/game-score-tracker' : '',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
