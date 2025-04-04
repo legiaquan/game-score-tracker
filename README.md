@@ -16,23 +16,18 @@ To manually deploy the application:
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
-# Build the application
-npm run deploy
-
-# Push the 'out' directory to the gh-pages branch
-npx gh-pages -d out
-
+# Build and deploy the application
+pnpm run deploy
 ```
-
 
 ### Local Development
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run dev
+pnpm run dev
 ``` 
